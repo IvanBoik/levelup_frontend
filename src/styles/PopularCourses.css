@@ -1,0 +1,11 @@
+﻿.popular-courses-container{
+    width: 1300px;
+    height: 800px;
+    margin-top: 80px;
+    background-color: #4B4734;
+}
+.popular-courses-head{
+    font-size: 78px;
+    font-weight: 400;
+    color: white;
+}
