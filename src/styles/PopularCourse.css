@@ -1,0 +1,27 @@
+﻿.popular-course-item{
+    width: 400px;
+    height: 300px;
+    border-radius: 20px;
+    margin-left: 30px;
+    cursor: pointer;
+    user-select:none;
+}
+.popular-course-item:first-child{
+    margin-left: 0;
+}
+.popular-course-title{
+    width: 400px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 400;
+    margin-top: 87px;
+    background: #FFFFFF80;
+}
+.popular-course-author{
+    margin-top: 13px;
+    width: 400px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 400;
+    background: #FFFFFF80;
+}

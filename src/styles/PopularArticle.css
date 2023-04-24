@@ -1,0 +1,60 @@
+﻿.popular-article-item{
+    width: 450px;
+    height: 320px;
+    background-color: #4B4734;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.popular-article-title{
+    width: 400px;
+    height: 70px;
+    margin-left: 10px;
+    color: white;
+    font-weight: 400;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+}
+.popular-course-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 450px;
+}
+.popular-article-text-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.popular-article-descr{
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+}
+.popular-article-author{
+    font-weight: 400;
+    font-size: 22px;
+    color: white;
+}
+.go-to-article{
+    cursor: pointer;
+    background: none;
+    width: 230px;
+    height: 40px;
+    color: white;
+    font-weight: 400;
+    font-size: 24px;
+    border-color: white;
+    border-radius: 10px;
+}
+.popular-article-text-block{
+    width: 240px;
+    height: 240px;
+    margin-left: 20px;
+}
+.popular-article-img{
+    width: 150px;
+    margin-left: 15px;
+}

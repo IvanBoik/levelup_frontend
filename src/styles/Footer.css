@@ -1,0 +1,36 @@
+﻿.footer-container{
+    width: 1000px;
+    height: 540px;/*752*/
+    margin-top: 80px;
+    color: white;
+    border: 7px solid #4B4734;
+}
+.contact-head{
+    width: 900px;
+    font-size: 40px;
+    font-weight: 400;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+.contact-block{
+    width: 900px;
+    margin-top: 20px;
+    font-size: 36px;
+    font-weight: 400;
+    margin-left: 30px;
+}
+.contact-text{
+    font-size: 28px;
+}
+.text-for-offers-and-questions{
+    font-weight: 400;
+    font-size: 34px;
+    margin-top: 40px;
+    margin-left: 30px;
+}
+
+a.owner-vk:active,
+a.owner-vk:hover,
+.owner-vk{
+    color: white;
+}

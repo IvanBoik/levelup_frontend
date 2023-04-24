@@ -1,0 +1,19 @@
+﻿.header-for-course-and-lesson{
+    width: calc(100% - 50px);
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-for-course-and-lesson-icon{
+    width: 90px;
+    height: 75px;
+    margin-left: 50px;
+}
+.header-for-course-and-lesson-text{
+    font-size: 24px;
+    font-weight: 400;
+    text-align: right;
+    color: white;
+}
