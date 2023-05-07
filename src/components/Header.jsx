@@ -1,14 +1,8 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 
-window.onload=function(){
-    const allLinks = document.querySelectorAll(".header-href");
-    allLinks.forEach(link => {
-        link.addEventListener("click", () => {
-            document.querySelector(".header-href-active").classList.remove(".header-href-active");
-            link.classList.add(".header-href-active");
-        })
-    });
+const user = {
+    isRegistered: false
 }
 
 const Header = () => {
@@ -22,7 +16,7 @@ const Header = () => {
                     isActive?"header-href header-href-active":"header-href"}>Статьи</NavLink>
                 <NavLink to="/courses" className={({isActive}) =>
                     isActive?"header-href header-href-active":"header-href"}>Курсы</NavLink>
-                <NavLink to="/profile" className={({isActive}) =>
+                <NavLink to={user.isRegistered ? "/profile" : "/login"} className={({isActive}) =>
                     isActive?"header-href header-href-active":"header-href"}>Личный<br/>кабинет</NavLink>
             </div>
         </div>

@@ -1,0 +1,28 @@
+﻿.course-third-block{
+    width: 1300px;
+    height: 650px;
+    background-color: #4B4734;
+    color: white;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+.course-third-block-title{
+    margin-left: 12px;
+    margin-top: 12px;
+    font-size: 48px;
+    font-weight: 500;
+}
+.course-third-block-description{
+    width: 1200px;
+    margin-left: 12px;
+    margin-top: 24px;
+    font-size: 36px;
+    font-weight: 400;
+}
+.course-third-block-promises-item{
+    margin-top: 0;
+    margin-left: 60px;
+}
+.course-third-block-promises{
+    margin-top: 40px;
+}

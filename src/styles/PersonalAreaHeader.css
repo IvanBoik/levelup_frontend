@@ -1,0 +1,66 @@
+﻿.personal-area-header{
+    width: 360px;
+    height: 100vh;
+    background: #4B4734;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.personal-area-header-logo-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+.personal-area-header-icon{
+    display: block;
+    width: 180px;
+    height: 145px;
+    margin-top: 5px;
+}
+.personal-area-header-logo-text{
+    width: 250px;
+    height: 90px;
+    color: white;
+    font-weight: 400;
+    font-size: 28px;
+    text-align: center;
+}
+.personal-area-header-links{
+    margin-top: 60px;
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.personal-area-header-link{
+    display: inline-block;
+    font-weight: 400;
+    font-size: 40px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+.personal-area-header-link:first-child{
+    margin-top: 0;
+}
+.personal-area-header-exit{
+    background: none;
+    width: 300px;
+    height: 52px;
+    box-sizing: border-box;
+    border: 3px solid #FFFFFF;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    bottom: 26px;
+    font-weight: 400;
+    font-size: 36px;
+}

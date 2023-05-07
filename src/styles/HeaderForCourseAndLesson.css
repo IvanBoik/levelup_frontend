@@ -1,19 +1,89 @@
 ﻿.header-for-course-and-lesson{
-    width: calc(100% - 50px);
+    width: 100%;
     height: 120px;
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*z-index: 1;*/
+    background: #23231A;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
+.header-for-course-and-lesson-icon-link{
+    width: 90px;
+    height: 75px;
+    margin-left: 40px;
+}
 .header-for-course-and-lesson-icon{
     width: 90px;
     height: 75px;
-    margin-left: 50px;
 }
 .header-for-course-and-lesson-text{
     font-size: 24px;
     font-weight: 400;
     text-align: right;
     color: white;
+    margin-right: 60px;
+}
+.header-for-course-and-lesson-with-buttons{
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    background: #23231A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.header-for-course-and-lesson-buttons{
+    width: 1300px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+}
+.header-for-course-and-lesson-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 80px;
+    margin-left: 24px;
+    color: white;
+    border-radius: 40px;
+    border: 4px white solid;
+    font-size: 48px;
+    font-weight: 400;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+.header-for-course-and-lesson-button:first-child,
+.header-for-course-and-lesson-button-active:first-child{
+    margin-left: 0;
+}
+.header-for-course-and-lesson-button-active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 80px;
+    margin-left: 24px;
+    color: white;
+    background: #E6E18F99;
+    border-radius: 40px;
+    font-size: 48px;
+    font-weight: 400;
+    text-decoration: none;
+}
+.header-button-of-lessons-list{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 126px;
+    height: 80px;
+    border: 4px solid #FFFFFF;
+    border-radius: 40px;
+    margin-left: 420px;
+    background: none;
 }

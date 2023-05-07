@@ -12,27 +12,10 @@ const courses = [
     {title: "Название курса", author: "автор", img:defaultLogo}
 ];
 let isDragging = false;
-// window.onload = () => {
-//     const scroll = document.querySelector(".popular-courses-scroll");
-//
-//     const dragging = (e) => {
-//         if(!isDragging) return;
-//         scroll.classList.add("dragging");
-//         scroll.scrollLeft -= e.movementX;
-//     };
-//     const dragStop = () => {
-//         isDragging = false;
-//         scroll.classList.remove("dragging");
-//     }
-//     scroll.addEventListener("mousedown", () => isDragging = true);
-//     scroll.addEventListener("mousemove", dragging);
-//     document.addEventListener("mouseup", dragStop);
-// }
 
 const PopularCourses = () => {
 
     React.useEffect(() => {
-        // let isDragging = false;
         const scroll = document.querySelector(".popular-courses-scroll");
 
         const dragging = (e) => {

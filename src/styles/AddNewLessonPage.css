@@ -1,0 +1,105 @@
+﻿.add-new-lesson-page-container{
+    margin-left: 360px;
+    color: white;
+    position: relative;
+}
+.add-new-lesson-page-head{
+    margin-left: 24px;
+    margin-top: 32px;
+    font-weight: 400;
+    font-size: 64px;
+}
+.add-new-lesson-page-data-block{
+    margin-top: 24px;
+    margin-left: 24px;
+    width: 990px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #FFFFFF;
+    padding-bottom: 60px;
+}
+.add-new-lesson-page-data-block:last-child{
+    padding-bottom: 32px;
+}
+.add-new-lesson-page-title-input{
+    margin-top: 32px;
+    margin-left: 80px;
+    width: 600px;
+    height: 70px;
+    background: #F5F5F5;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding-left: 24px;
+    color: black;
+    font-weight: 400;
+    font-size: 32px;
+}
+.add-new-lesson-page-title-input::placeholder{
+    color: #00000099;
+}
+.add-new-lesson-page-little-description{
+    margin-top: 24px;
+    margin-left: 80px;
+    width: 900px;
+    height: 70px;
+    background: #F5F5F5;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    color: black;
+    font-weight: 400;
+    font-size: 24px;
+    padding-left: 24px;
+}
+.add-new-lesson-page-little-description::placeholder{
+    color: #00000099;
+}
+.add-new-lesson-page-video-input{
+    display: none;
+}
+.add-new-lesson-page-video-label{
+    width: 300px;
+    height: 70px;
+    margin-left: 80px;
+    margin-top: 24px;
+    background: #E6E18F99;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 32px;
+    cursor: pointer;
+}
+.add-new-lesson-page-content{
+    margin-top: 32px;
+    margin-left: 80px;
+    width: 600px;
+    height: 200px;
+    background: #F5F5F5;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding-left: 24px;
+    padding-top: 10px;
+    font-weight: 400;
+    font-size: 28px;
+    color: black;
+}
+.add-new-lesson-page-content::placeholder{
+    color: #00000099;
+}
+.add-new-lesson-page-save-lesson{
+    margin-top: 24px;
+    margin-left: 24px;
+    width: 400px;
+    height: 80px;
+    background: #E6E18F99;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 40px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

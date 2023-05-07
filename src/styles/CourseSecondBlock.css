@@ -1,0 +1,35 @@
+﻿.course-second-block-container-for-lists{
+    width: 1300px;
+    height: 428px;
+    margin-top: 10px;
+}
+.course-second-block-lists{
+    display: flex;
+    flex-direction: row;
+}
+.course-second-block-list{
+    margin-top: 64px;
+    margin-left: 12px;
+    width: 600px;
+    height: 300px;
+}
+.course-second-block-item{
+    width: 600px;
+    height: 150px;
+    color: white;
+    font-size: 48px;
+    font-weight: 400;
+    margin-left: 30px;
+}
+.course-second-block-container-for-progressbar{
+    width: 1300px;
+    height: 260px;
+    color: white;
+    margin-top: 10px;
+    margin-left: 12px;
+    font-size: 48px;
+    font-weight: 500;
+}
+.course-progressbar-text{
+    margin-top: 48px;
+}

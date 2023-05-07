@@ -1,0 +1,140 @@
+﻿.authorisation-page{
+    width: 100vw;
+    height: 100vh;
+    background: url("../images/auth-img.png");
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.login-block{
+    width: 400px;
+    height: 500px;
+    background: linear-gradient(0deg, #DADADA, #DADADA), #FFFFFF;
+    border-radius: 10px;
+    margin-left: 100px;
+    margin-top: 100px;
+}
+.login-block-header{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.login-block-nav-button{
+    font-weight: 500;
+    font-size: 30px;
+    color: #4B4734;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.login-block-nav-button:first-child{
+    margin-left: 20px;
+}
+.login-block-nav-button-active:first-child{
+    margin-left: 20px;
+}
+.login-block-nav-button-active{
+    color: black;
+}
+.login-block-close-nav-link{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+.login-block-close-cross-img{
+    display: block;
+    width: 70px;
+    height: 70px;
+}
+.login-block-form{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login-block-form-input{
+    width: 280px;
+    height: 40px;
+    background: #F5F5F5;
+    border-radius: 10px;
+    border: 1px solid #000000;
+    outline: none;
+    padding-left: 15px;
+    margin-top: 12px;
+    font-weight: 400;
+    font-size: 20px;
+}
+.login-block-form-input:first-child{
+    margin-top: 0;
+}
+.login-block-form-enter{
+    width: 280px;
+    height: 40px;
+    background: #C56D00;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-weight: 400;
+    font-size: 22px;
+    margin-top: 12px;
+    cursor: pointer;
+}
+.login-block-footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border-top: 1px solid black;
+}
+.login-block-footer-text{
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 400;
+    font-size: 16px;
+}
+.google-enter{
+    width: 50px;
+    height: 50px;
+    background: none;
+    border: none;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.google-enter-logo{
+    display: block;
+    width: 50px;
+    height: 50px;
+}
+.authorisation-page-head{
+    font-weight: 500;
+    font-size: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    color: #F5F5F5;
+    text-align: center;
+    margin-right: 36px;
+    margin-bottom: 30px;
+}
+.login-block-registration-form{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+}

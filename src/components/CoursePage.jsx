@@ -4,8 +4,8 @@ import BodyForCourse from "./BodyForCourse";
 const CoursePage = () => {
     return (
         <div className="course-page">
-            <HeaderForCourseAndLesson/>
-            <BodyForCourse/>
+            <HeaderForCourseAndLesson isStudent={true}/>
+            <BodyForCourse isStudent={true}/>
         </div>
     );
 };

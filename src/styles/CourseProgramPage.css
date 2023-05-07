@@ -1,0 +1,96 @@
+﻿.course-program-page-container{
+    margin-left: 360px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+}
+.course-program-page-head{
+    margin-left: 24px;
+    margin-top: 32px;
+    font-weight: 400;
+    font-size: 64px;
+}
+.course-program-page-no-lessons-block{
+    font-weight: 400;
+    font-size: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 36px;
+}
+.course-program-page-add-new-lesson{
+    margin-top: 36px;
+    width: 400px;
+    height: 80px;
+    background: #E6E18F99;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 400;
+    font-size: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    text-decoration: none;
+}
+.course-program-page-footer{
+    width: 100%;
+    margin-top: 30px;
+    height: 100px;
+    background: #4B4734;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+.course-program-page-footer-with-scroll{
+    width: 100%;
+    height: 100px;
+    background: #4B4734;
+    margin-top: 56px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.course-program-page-footer-button{
+    background: #E6E18F99;
+    width: 300px;
+    height: 80px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 40px;
+    margin-right: 24px;
+    border: none;
+    outline: none;
+}
+.course-program-page-footer-button:last-child{
+    background: #FFFFFF99;
+    color: black;
+}
+/*@media (max-height: 1112px) {*/
+/*    .course-program-page-footer{*/
+/*        width: calc(100vw - 377px);*/
+/*        margin-top: 30px;*/
+/*        height: 100px;*/
+/*        background: #4B4734;*/
+/*        display: flex;*/
+/*        flex-direction: row;*/
+/*        justify-content: flex-end;*/
+/*        align-items: center;*/
+/*        padding-top: 16px;*/
+/*        padding-bottom: 16px;*/
+/*    }*/
+/*}*/

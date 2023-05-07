@@ -8,6 +8,16 @@
 @import "HeaderForCourseAndLesson.css";
 @import "CourseFirstBlock.css";
 @import "BodyForCourse.css";
+@import "CourseSecondBlock.css";
+@import "CourseThirdBlock.css";
+@import "CourseFourthBlock.css";
+@import "LessonPage.css";
+@import "PersonalAreaHeader.css";
+@import "PersonalAreaPage.css";
+@import "CreateCoursePage.css";
+@import "CourseProgramPage.css";
+@import "AddNewLessonPage.css";
+@import "AuthorisationPage.css";
 
 body {
     background-color: #23231A;
@@ -16,4 +26,7 @@ body {
 *{
     margin: 0;
     padding: 0;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
 }
