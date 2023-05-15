@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.4.0",
     "cra-template": "1.2.0",
+    "mobx": "^6.9.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
     "react-horizontal-scrolling-menu": "^4.0.4",
+    "react-redux": "^8.0.5",
     "react-router": "^6.10.0",
     "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1"

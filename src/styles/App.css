@@ -18,6 +18,7 @@
 @import "CourseProgramPage.css";
 @import "AddNewLessonPage.css";
 @import "AuthorisationPage.css";
+@import "DropDownMenu.css";
 
 body {
     background-color: #23231A;

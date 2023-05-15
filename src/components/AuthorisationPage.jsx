@@ -2,36 +2,61 @@
 import {NavLink, useNavigate} from "react-router-dom";
 import cross from "../images/close-cross.svg";
 import googleLogo from "../images/google.svg";
-import UserService from "../api/UserService";
+import AuthService from "../api/AuthService";
 
 
 const AuthorisationPage = () => {
-    const nav = useNavigate();
-    const registration = () => {
+    const navigate = useNavigate();
+
+    const registration = async () => {
         const name = document.querySelector("#registration-input-1").value;
         const surname = document.querySelector("#registration-input-2").value;
         const email = document.querySelector("#registration-input-3").value;
         const password = document.querySelector("#registration-input-4").value;
         const passwordConfirm = document.querySelector("#registration-input-5").value;
         if (password !== passwordConfirm) throw new Error();
-        UserService.save({
-            name: name,
-            surname: surname,
-            email: email,
-            password: password
-        });
+        try {
+            const response = await AuthService.registration({
+                name,
+                surname,
+                email,
+                password
+            });
+            localStorage.setItem("user", JSON.stringify(response.user));
+            localStorage.setItem("accessToken", response.accessToken);
+            localStorage.setItem("refreshToken", response.refreshToken);
+            navigate("/profile");
+        }
+        catch (e) {
+            alert("Ошибка авторизации");
+        }
+    }
 
-        nav("/profile");
+    const login = async () => {
+        const email = document.querySelector("#login-input-1").value;
+        const password = document.querySelector("#login-input-2").value;
+
+        try {
+            const response = await AuthService.login(email, password);
+            localStorage.setItem("user", JSON.stringify(response.user));
+            localStorage.setItem("accessToken", response.accessToken);
+            localStorage.setItem("refreshToken", response.refreshToken);
+            navigate("/profile");
+        }
+        catch (e) {
+            alert("Ошибка авторизации");
+        }
     }
 
     const loginForm = (
         <div>
             <div className="login-block-form">
-                <input type="text" className="login-block-form-input"
+                <input type="text" className="login-block-form-input" id="login-input-1"
                        placeholder="E-mail"/>
-                <input type="password" className="login-block-form-input password"
+                <input type="password" className="login-block-form-input password" id="login-input-2"
                        placeholder="Пароль"/>
-                <button className="login-block-form-enter">Войти</button>
+                <button className="login-block-form-enter"
+                onClick={() => login()}>Войти</button>
             </div>
             <div className="login-block-footer">
                 <p className="login-block-footer-text">Войти с помощью Google</p>
@@ -55,7 +80,7 @@ const AuthorisationPage = () => {
             <input type="password" className="login-block-form-input" id="registration-input-5"
                    placeholder="Повторите пароль"/>
             <button className="login-block-form-enter"
-            onClick={() => registration()}>Войти</button>
+            onClick={() => registration()}>Регистрация</button>
         </div>
     );
 
