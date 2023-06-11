@@ -14,16 +14,30 @@
     margin-left: 24px;
     width: 990px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     border: 1px solid #FFFFFF;
     padding-bottom: 60px;
 }
-.add-new-lesson-page-data-block:last-child{
+.add-new-lesson-page-data-second-block{
+    margin-top: 24px;
+    margin-left: 24px;
+    width: 990px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #FFFFFF;
     padding-bottom: 32px;
+}
+.add-new-lesson-page-lesson-number{
+    width: 100px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    font-weight: 400;
+    font-size: 30px;
 }
 .add-new-lesson-page-title-input{
     margin-top: 32px;
-    margin-left: 80px;
     width: 600px;
     height: 70px;
     background: #F5F5F5;
@@ -39,7 +53,6 @@
 }
 .add-new-lesson-page-little-description{
     margin-top: 24px;
-    margin-left: 80px;
     width: 900px;
     height: 70px;
     background: #F5F5F5;
@@ -59,7 +72,6 @@
 .add-new-lesson-page-video-label{
     width: 300px;
     height: 70px;
-    margin-left: 80px;
     margin-top: 24px;
     background: #E6E18F99;
     border-radius: 20px;
@@ -72,7 +84,7 @@
 }
 .add-new-lesson-page-content{
     margin-top: 32px;
-    margin-left: 80px;
+    margin-left: 62px;
     width: 600px;
     height: 200px;
     background: #F5F5F5;
@@ -83,6 +95,7 @@
     font-weight: 400;
     font-size: 28px;
     color: black;
+    resize: vertical;
 }
 .add-new-lesson-page-content::placeholder{
     color: #00000099;
@@ -102,4 +115,50 @@
     color: white;
     border: none;
     cursor: pointer;
+}
+.add-new-lesson-page-home-work-block{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 12px;
+    margin-left: 62px;
+}
+.add-new-lesson-page-home-work-type{
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.add-new-lesson-page-home-work-head{
+    font-weight: 400;
+    font-size: 32px;
+    margin-bottom: 24px;
+}
+.home-work-head{
+    margin-top: 12px;
+    margin-left: 62px;
+    display: flex;
+    flex-direction: row;
+    font-size: 32px;
+    font-weight: 400;
+}
+.home-work-strong-head{
+    font-weight: 500;
+    cursor: pointer;
+}
+.home-work-free-answer-block{
+    border: 1px solid #FFFFFF;
+    width: 616px;
+    margin-left: 62px;
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.home-work-free-answer-file-formats{
+    margin-top: 12px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+    width: 100%;
 }

@@ -2,7 +2,7 @@
 import PersonalAreaHeader from "./PersonalAreaHeader";
 import {NavLink} from "react-router-dom";
 
-let lessons = [
+let lsns = [
     {
         title: "Морковь для новичков 1",
         introduction: "Вы узнаете, как выбрать правильный сорт моркови, в зависимости от ее качеств"
@@ -11,13 +11,17 @@ let lessons = [
         title: "Морковь для новичков 2",
         introduction: "Вы узнаете, как выбрать правильный сорт моркови, в зависимости от ее качеств"
     },
-    {
-        title: "Морковь для новичков 3",
-        introduction: "Вы узнаете, как выбрать правильный сорт моркови, в зависимости от ее качеств"
-    }
+    // {
+    //     title: "Морковь для новичков 3",
+    //     introduction: "Вы узнаете, как выбрать правильный сорт моркови, в зависимости от ее качеств"
+    // }
 ];
 
 const CourseProgramPage = () => {
+
+    const [lessons, setLessons] = React.useState(lsns);
+    localStorage.setItem("lessonsCount", lessons.length);
+
     return (
         <div className="course-program-page">
             <PersonalAreaHeader/>
@@ -25,6 +29,7 @@ const CourseProgramPage = () => {
                 <div className="course-program-page-container-without-footer">
                     <h2 className="course-program-page-head">Программа курса</h2>
                     {lessons.map((x, index) => (
+                        //<CourseProgramLessonBlock index={index} title={x.title} introduction={x.introduction}/>
                         <div className="course-program-page-lesson-block">
                             <p className="course-program-page-lesson-index">{index+1}</p>
                             <div className="course-program-page-lesson-block-content">
@@ -32,7 +37,10 @@ const CourseProgramPage = () => {
                                 <p className="course-program-page-lesson-introduction">{x.introduction}</p>
                                 <div className="course-program-page-lesson-block-buttons">
                                     <button className="course-program-page-lesson-block-button">Редактировать</button>
-                                    <button className="course-program-page-lesson-block-button">Удалить</button>
+                                    <button className="course-program-page-lesson-block-button"
+                                    onClick={() => {
+                                        setLessons(lessons.filter((x, i) => i !== index));
+                                    }}>Удалить</button>
                                 </div>
                             </div>
                         </div>

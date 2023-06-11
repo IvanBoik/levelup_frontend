@@ -42,12 +42,6 @@ const AuthorisationPage = () => {
         [ user ]
     );
 
-    // log out function to log the user out of google and set the profile array to null
-    const logOut = () => {
-        googleLogout();
-        setProfile(null);
-    };
-
     const registration = async () => {
         const name = document.querySelector("#registration-input-1").value;
         const surname = document.querySelector("#registration-input-2").value;

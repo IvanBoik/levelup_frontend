@@ -76,6 +76,10 @@
     border: none;
     outline: none;
 }
+.course-program-page-footer-button:last-child{
+    background: #FFFFFF99;
+    color: black;
+}
 .course-program-page-lesson-block{
     width: 990px;
     height: 350px;

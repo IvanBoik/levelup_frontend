@@ -11,15 +11,16 @@ export default class AuthService {
         params.append("password", password);
 
         const access = (await axios.post("http://localhost:8080/realms/levelup/protocol/openid-connect/token", params)).data;
-        const user = await axios.get(`http://localhost:8081/api/users/user_by_email/${email}`, {
+        const user = (await axios.get(`http://localhost:8081/api/users/user_by_email/${email}`, {
             headers: {
                 Authorization: `Bearer ${access.access_token}`
             }
-        });
+        })).data;
+        user.password = password;
         return {
             accessToken: access.access_token,
             refreshToken: access.refresh_token,
-            user: user.data
+            user: user
         };
     }
 
@@ -53,7 +54,7 @@ export default class AuthService {
             return result;
         }
         catch (e) {
-            return e;
+            console.log(e);
         }
     }
 
@@ -64,6 +65,7 @@ export default class AuthService {
             surname: user.family_name,
             password: null
         })).data;
+        console.log("responseUser: " + responseUser);
 
         let access;
 
