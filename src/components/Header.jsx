@@ -2,7 +2,7 @@ import React from 'react';
 import {NavLink} from "react-router-dom";
 
 const Header = () => {
-    let isUser = localStorage.getItem("accessToken") !== 'null';
+    let isUser = localStorage.getItem("accessToken") !== null;
 
     return (
         <div className="main-header">

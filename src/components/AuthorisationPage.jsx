@@ -3,10 +3,50 @@ import {NavLink, useNavigate} from "react-router-dom";
 import cross from "../images/close-cross.svg";
 import googleLogo from "../images/google.svg";
 import AuthService from "../api/AuthService";
+import { googleLogout, useGoogleLogin } from '@react-oauth/google';
+import axios from "axios";
 
 
 const AuthorisationPage = () => {
     const navigate = useNavigate();
+
+    const [ user, setUser ] = React.useState(null);
+    const [ profile, setProfile ] = React.useState([]);
+
+    const googleLogin = useGoogleLogin({
+        onSuccess: (codeResponse) => {setUser(codeResponse); console.log(codeResponse);},
+        onError: (error) => console.log('Login Failed:', error)
+    });
+
+    React.useEffect(
+        () => {
+            if (user) {
+                axios
+                    .get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`, {
+                        headers: {
+                            Authorization: `Bearer ${user.access_token}`,
+                            Accept: 'application/json'
+                        }
+                    })
+                    .then(async (res) => {
+                        const response = res.data;
+                        const userFromBack = await AuthService.googleAuthorization(response);
+                        localStorage.setItem("user", JSON.stringify(userFromBack.user));
+                        localStorage.setItem("accessToken", response.accessToken);
+                        localStorage.setItem("refreshToken", response.refreshToken);
+                        navigate("/profile");
+                    })
+                    .catch((err) => console.log(err));
+            }
+        },
+        [ user ]
+    );
+
+    // log out function to log the user out of google and set the profile array to null
+    const logOut = () => {
+        googleLogout();
+        setProfile(null);
+    };
 
     const registration = async () => {
         const name = document.querySelector("#registration-input-1").value;
@@ -17,17 +57,31 @@ const AuthorisationPage = () => {
         if (password !== passwordConfirm) throw new Error();
         try {
             const response = await AuthService.registration({
-                name,
-                surname,
+                enabled: true,
                 email,
-                password
-            });
+                credentials: [{
+                    type: "password",
+                    value: password,
+                    temporary: false
+                }],
+                firstName: name,
+                lastName: surname,
+                username: email
+            },
+                {
+                    email,
+                    password,
+                    name,
+                    surname
+                });
+            console.log(response);
             localStorage.setItem("user", JSON.stringify(response.user));
             localStorage.setItem("accessToken", response.accessToken);
             localStorage.setItem("refreshToken", response.refreshToken);
             navigate("/profile");
         }
         catch (e) {
+            console.log(e);
             alert("Ошибка авторизации");
         }
     }
@@ -44,6 +98,7 @@ const AuthorisationPage = () => {
             navigate("/profile");
         }
         catch (e) {
+            console.log(e);
             alert("Ошибка авторизации");
         }
     }
@@ -60,7 +115,8 @@ const AuthorisationPage = () => {
             </div>
             <div className="login-block-footer">
                 <p className="login-block-footer-text">Войти с помощью Google</p>
-                <button className="google-enter">
+                {/*<GoogleLogin onSuccess={(x) => console.log(x)} onError={(x) => console.log(x)}/>*/}
+                <button className="google-enter" onClick={() => googleLogin()}>
                     <img src={googleLogo} alt="" className="google-enter-logo"/>
                 </button>
             </div>

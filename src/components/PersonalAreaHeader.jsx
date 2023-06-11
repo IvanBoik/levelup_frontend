@@ -44,6 +44,8 @@ const PersonalAreaHeader = (props) => {
             </div>
             <button className="personal-area-header-exit" onClick={() => {
                 localStorage.removeItem("user");
+                localStorage.removeItem("accessToken");
+                localStorage.removeItem("refreshToken");
                 navigate("/login");
             }}>Выйти</button>
         </div>
