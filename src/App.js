@@ -11,16 +11,49 @@ import CreateCoursePage from "./components/CreateCoursePage";
 import CourseProgramPage from "./components/CourseProgramPage";
 import AddNewLessonPage from "./components/AddNewLessonPage";
 import AuthorisationPage from "./components/AuthorisationPage";
-import {AuthContext} from "./context";
+import {CourseContext} from "./context";
 import React from "react";
+import CoursePublicationPage from "./components/CoursePublicationPage";
+import MakeCoursePaidPage from "./components/MakeCoursePaidPage";
+import FinConditionsPage from "./components/FinConditionsPage";
 
 function App() {
-    const [user, setUser] = React.useState({});
+    const [ctxCourse, setCtxCourse] = React.useState({
+        author: "",
+        avatar: "",
+        title: "",
+        description: "",
+        price: "",
+        dateOfCreate: "",
+        difficulty: "",
+        topic: ""
+    });
+    const [ctxLesson, setCtxLesson] = React.useState({
+        title: "",
+        file: "",
+        duration: "",
+        introduction: "",
+        description: "",
+        homework: {
+            homeworkType: "",
+            freeAnswer: "",
+            questions: [{
+                text: "",
+                type: "radio",
+                answers: [{
+                    text: "",
+                    isRight: true
+                }]
+            }]
+        }
+    });
 
   return (
-      <AuthContext.Provider value={{
-          user,
-          setUser
+      <CourseContext.Provider value={{
+          ctxCourse,
+          setCtxCourse,
+          ctxLesson,
+          setCtxLesson
       }}>
           <div className="App">
               <Routes>
@@ -34,10 +67,13 @@ function App() {
                   <Route path="profile/create_course" element={<CreateCoursePage/>}/>
                   <Route path="/profile/create_course/content" element={<CourseProgramPage/>}/>
                   <Route path="/profile/create_course/content/create_lesson" element={<AddNewLessonPage/>}/>
+                  <Route path="/profile/create_course/publication" element={<CoursePublicationPage/>}/>
+                  <Route path="/profile/create_course/publication/make_paid" element={<MakeCoursePaidPage/>}/>
+                  <Route path="/profile/create_course/publication/make_paid/conditions" element={<FinConditionsPage/>}/>
                   <Route path="*" element={<NotFound/>}/>
               </Routes>
           </div>
-      </AuthContext.Provider>
+      </CourseContext.Provider>
   );
 }
 

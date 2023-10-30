@@ -3,7 +3,7 @@ import {NavLink, useNavigate} from "react-router-dom";
 import cross from "../images/close-cross.svg";
 import googleLogo from "../images/google.svg";
 import AuthService from "../api/AuthService";
-import { googleLogout, useGoogleLogin } from '@react-oauth/google';
+import { useGoogleLogin } from '@react-oauth/google';
 import axios from "axios";
 
 
@@ -14,32 +14,38 @@ const AuthorisationPage = () => {
     const [ profile, setProfile ] = React.useState([]);
 
     const googleLogin = useGoogleLogin({
-        onSuccess: (codeResponse) => {setUser(codeResponse); console.log(codeResponse);},
+        onSuccess: (codeResponse) => {
+            setUser(codeResponse);
+            console.log(codeResponse);
+        },
         onError: (error) => console.log('Login Failed:', error)
     });
 
     React.useEffect(
         () => {
             if (user) {
-                axios
-                    .get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`, {
+                axios.get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`, {
                         headers: {
                             Authorization: `Bearer ${user.access_token}`,
                             Accept: 'application/json'
                         }
                     })
-                    .then(async (res) => {
+                    .then(async res => {
                         const response = res.data;
-                        const userFromBack = await AuthService.googleAuthorization(response);
-                        localStorage.setItem("user", JSON.stringify(userFromBack.user));
-                        localStorage.setItem("accessToken", response.accessToken);
-                        localStorage.setItem("refreshToken", response.refreshToken);
-                        navigate("/profile");
+                        console.log(response);
+                        await AuthService.googleAuthorization(response)
+                            .then(responseFromBack => {
+                                const userFromBack = responseFromBack.data
+                                localStorage.setItem("user", JSON.stringify(userFromBack.user));
+                                localStorage.setItem("accessToken", userFromBack.accessToken);
+                                localStorage.setItem("refreshToken", userFromBack.refreshToken);
+                            });
+                            navigate("/profile");
                     })
                     .catch((err) => console.log(err));
             }
         },
-        [ user ]
+        [navigate, user]
     );
 
     const registration = async () => {
@@ -50,29 +56,20 @@ const AuthorisationPage = () => {
         const passwordConfirm = document.querySelector("#registration-input-5").value;
         if (password !== passwordConfirm) throw new Error();
         try {
-            const response = await AuthService.registration({
-                enabled: true,
-                email,
-                credentials: [{
-                    type: "password",
-                    value: password,
-                    temporary: false
-                }],
-                firstName: name,
-                lastName: surname,
-                username: email
-            },
+            await AuthService.registration(
                 {
                     email,
                     password,
                     name,
                     surname
+                })
+                .then(response => {
+                    const data = response.data;
+                    localStorage.setItem("user", JSON.stringify(data.user));
+                    localStorage.setItem("accessToken", data.accessToken);
+                    localStorage.setItem("refreshToken", data.refreshToken);
                 });
-            console.log(response);
-            localStorage.setItem("user", JSON.stringify(response.user));
-            localStorage.setItem("accessToken", response.accessToken);
-            localStorage.setItem("refreshToken", response.refreshToken);
-            navigate("/profile");
+                navigate("/profile");
         }
         catch (e) {
             console.log(e);
@@ -85,11 +82,14 @@ const AuthorisationPage = () => {
         const password = document.querySelector("#login-input-2").value;
 
         try {
-            const response = await AuthService.login(email, password);
-            localStorage.setItem("user", JSON.stringify(response.user));
-            localStorage.setItem("accessToken", response.accessToken);
-            localStorage.setItem("refreshToken", response.refreshToken);
-            navigate("/profile");
+            await AuthService.login(email, password)
+                .then(response => {
+                    const data = response.data
+                    localStorage.setItem("user", JSON.stringify(data.user));
+                    localStorage.setItem("accessToken", data.accessToken);
+                    localStorage.setItem("refreshToken", data.refreshToken);
+                });
+                navigate("/profile");
         }
         catch (e) {
             console.log(e);

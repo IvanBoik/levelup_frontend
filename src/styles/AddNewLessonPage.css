@@ -19,16 +19,16 @@
     padding-bottom: 60px;
 }
 .add-new-lesson-page-data-second-block{
-    margin-top: 24px;
     margin-left: 24px;
     width: 990px;
     display: flex;
     flex-direction: column;
     border: 1px solid #FFFFFF;
+    border-top: none;
     padding-bottom: 32px;
 }
 .add-new-lesson-page-lesson-number{
-    width: 100px;
+    width: 62px;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -37,7 +37,6 @@
     font-size: 30px;
 }
 .add-new-lesson-page-title-input{
-    margin-top: 32px;
     width: 600px;
     height: 70px;
     background: #F5F5F5;
@@ -161,4 +160,138 @@
     padding-left: 10px;
     font-size: 20px;
     width: 100%;
+}
+.home-work-test-question-block{
+    margin-top: 12px;
+    margin-left: 62px;
+    border: 1px solid #FFFFFF;
+    width: 616px;
+    display: flex;
+    flex-direction: column;
+}
+.home-work-test-question-input{
+    width: 600px;
+    height: 60px;
+    margin-top: 8px;
+    margin-inline: auto;
+    background: #F5F5F5;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    font-size: 24px;
+    padding-left: 24px;
+}
+.home-work-test-question-text{
+    margin-top: 12px;
+    margin-left: 8px;
+    font-weight: 400;
+    font-size: 28px;
+}
+.home-work-test-question-answer-type-block{
+    margin-top: 12px;
+    margin-left: 8px;
+    display: flex;
+    flex-direction: row;
+}
+.home-work-test-question-answer-type{
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-right: 24px;
+}
+.home-work-answer-option-block{
+    width: 600px;
+    height: 60px;
+    background: #F5F5F5;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    margin-top: 12px;
+    margin-left: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.home-work-remove-answer-option{
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.home-work-answer-option-is-right{
+    margin-left: 24px;
+}
+.home-work-answer-option-input{
+    height: 100%;
+    width: 78%;
+    margin-left: 8px;
+    font-size: 24px;
+    background: none;
+    border: none;
+}
+.home-work-answer-option-input:focus{
+    outline: none;
+}
+.home-work-add-answer-option{
+    width: 425px;
+    height: 60px;
+    background: #E6E18F99;
+    margin-top: 12px;
+    margin-left: 8px;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+.home-work-answer-option-is-right{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+.home-work-test-add-question{
+    margin-top: 12px;
+    margin-left: 62px;
+    width: 315px;
+    height: 60px;
+    background: #E6E18F99;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+.add-new-lesson-page-first-line{
+    width: 100%;
+    margin-top: 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.add-new-lesson-page-remove-lesson{
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 240px;
+}
+.home-work-test-remove-question{
+    width: 315px;
+    height: 60px;
+    margin-top: 12px;
+    margin-left: 8px;
+    margin-bottom: 8px;
+    background: #E6E18F99;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    cursor: pointer;
 }

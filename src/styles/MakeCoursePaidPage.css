@@ -1,0 +1,53 @@
+﻿.make-course-paid-page-container{
+    margin-left: 384px;
+    color: white;
+}
+.make-course-paid-page-head{
+    margin-top: 32px;
+    font-weight: 400;
+    font-size: 64px;
+}
+.make-course-paid-page-subhead{
+    margin-top: 24px;
+    font-size: 40px;
+}
+.make-course-paid-page-form-line{
+    margin-top: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.make-course-paid-page-form-line-input{
+    margin-left: 19px;
+    width: 300px;
+    height: 60px;
+    box-sizing: border-box;
+    padding: 0 24px;
+    background: #F5F5F5;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    font-size: 30px;
+}
+.make-course-paid-page-form-line-input-check{
+    margin-left: 12px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.make-course-paid-page-form-line-text{
+    font-size: 32px;
+}
+.make-course-paid-page-button{
+    width: 250px;
+    height: 70px;
+    background: #E6E18F80;
+    border: none;
+    border-radius: 20px;
+    font-size: 32px;
+    color: white;
+    margin-top: 36px;
+    cursor: pointer;
+}
+.make-course-paid-page-link:visited{
+    color: white;
+}

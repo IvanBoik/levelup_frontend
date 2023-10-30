@@ -46,7 +46,6 @@
 .create-course-page-future-work-input-label{
     width: 200px;
     height: 80px;
-    margin-top: 36px;
     background: #E6E18F99;
     border-radius: 20px;
     font-weight: 400;
@@ -68,11 +67,13 @@
     color: #00000099;
     font-weight: 400;
     font-size: 24px;
+    resize: vertical;
 }
 .create-course-page-nav-link{
     width: 400px;
     height: 80px;
     margin-top: 36px;
+    margin-bottom: 32px;
     background: #E6E18F99;
     border-radius: 20px;
     font-weight: 400;
@@ -82,6 +83,8 @@
     align-items: center;
     justify-content: center;
     color: white;
+    border: none;
+    cursor: pointer;
 }
 .create-course-page-drop-down-container{
     display: flex;
@@ -105,6 +108,7 @@
     height: 80px;
     font-weight: 400;
     font-size: 40px;
+    cursor: pointer;
 }
 .create-course-page-wrapper{
     position:fixed;
@@ -120,4 +124,17 @@
     margin-top: 36px;
     font-weight: 400;
     font-size: 32px;
+}
+.create-course-page-avatar-preview{
+    width: 120px;
+    height: 80px;
+    display: block;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.create-course-page-future-work-list{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 36px;
 }

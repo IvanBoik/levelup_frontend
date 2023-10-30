@@ -27,20 +27,20 @@ const PersonalAreaHeader = (props) => {
                                    : "personal-area-header-link"}>
                                 {props.is ? "Мои курсы" : "Содержание"}
                 </NavLink>
-                <NavLink to={props.is ? "/profile/create_course" : "/profile/create_course/publication"} end
+                <NavLink to={props.is ? "/profile/create_course" : "/profile/create_course/publication"}
                                className={({isActive}) => isActive
                                    ? "personal-area-header-link-active"
                                    : "personal-area-header-link"}
                                 onClick={() => {props.is && props.setIs(false)}}>
                                 {props.is ? "Добавить курс" : "Публикация"}
                 </NavLink>
-                <NavLink to={props.is ? "/profile/create_article" : "/profile"} end
-                               className={({isActive}) => isActive
-                                   ? "personal-area-header-link-active"
-                                   : "personal-area-header-link"}
-                                onClick={() => {props.is && props.setIs(false)}}>
-                                {props.is ? "Добавить статью" : "Личный кабинет"}
-                </NavLink>
+                {!props.is && <NavLink to="/profile" end
+                                      className={({isActive}) => isActive
+                                          ? "personal-area-header-link-active"
+                                          : "personal-area-header-link"}
+                                      onClick={() => {props.is && props.setIs(false)}}>
+                    {props.is ? "Добавить статью" : "Личный кабинет"}
+                </NavLink>}
             </div>
             <button className="personal-area-header-exit" onClick={() => {
                 localStorage.removeItem("user");

@@ -5,7 +5,7 @@
     border-radius: 20px;
 }
 .main-body{
-    height: 2850px;
+    padding-bottom: 50px;
     width: 100%;
     margin-top: 120px;
     display: flex;

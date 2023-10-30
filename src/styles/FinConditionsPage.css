@@ -1,0 +1,34 @@
+﻿.fin-conditions-page-container{
+    margin-left: 384px;
+    color: white;
+}
+.fin-conditions-page-head{
+    font-weight: 400;
+    font-size: 64px;
+    margin-top: 24px;
+    margin-bottom: 30px;
+}
+.fin-conditions-page-text{
+    margin-top: 8px;
+    margin-right: 24px;
+    font-size: 30px;
+}
+.fin-conditions-page-subhead{
+    margin-top: 36px;
+    font-size: 40px;
+    font-weight: 400;
+}
+.fin-conditions-page-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 36px;
+    margin-bottom: 32px;
+    width: 250px;
+    height: 70px;
+    background: #E6E18F80;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 32px;
+}

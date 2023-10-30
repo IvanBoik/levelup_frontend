@@ -25,7 +25,6 @@ const Body = () => {
                 <button className="banner-button">Поехали</button>
             </div>
             <PopularCourses/>
-            <PopularArticles/>
             <Footer/>
         </div>
     );

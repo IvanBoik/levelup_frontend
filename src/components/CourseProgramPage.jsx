@@ -2,24 +2,9 @@
 import PersonalAreaHeader from "./PersonalAreaHeader";
 import {NavLink} from "react-router-dom";
 
-let lsns = [
-    {
-        title: "Морковь для новичков 1",
-        introduction: "Вы узнаете, как выбрать правильный сорт моркови, в зависимости от ее качеств"
-    },
-    {
-        title: "Морковь для новичков 2",
-        introduction: "Вы узнаете, как выбрать правильный сорт моркови, в зависимости от ее качеств"
-    },
-    // {
-    //     title: "Морковь для новичков 3",
-    //     introduction: "Вы узнаете, как выбрать правильный сорт моркови, в зависимости от ее качеств"
-    // }
-];
-
 const CourseProgramPage = () => {
 
-    const [lessons, setLessons] = React.useState(lsns);
+    const [lessons, setLessons] = React.useState([]);
     localStorage.setItem("lessonsCount", lessons.length);
 
     return (
@@ -29,7 +14,6 @@ const CourseProgramPage = () => {
                 <div className="course-program-page-container-without-footer">
                     <h2 className="course-program-page-head">Программа курса</h2>
                     {lessons.map((x, index) => (
-                        //<CourseProgramLessonBlock index={index} title={x.title} introduction={x.introduction}/>
                         <div className="course-program-page-lesson-block">
                             <p className="course-program-page-lesson-index">{index+1}</p>
                             <div className="course-program-page-lesson-block-content">
@@ -56,9 +40,6 @@ const CourseProgramPage = () => {
                         </div>}
                     <NavLink to="/profile/create_course/content/create_lesson"
                              className="course-program-page-add-new-lesson">+ Новый урок</NavLink>
-                </div>
-                <div className="course-program-page-footer">
-                    <button className="course-program-page-footer-button">Сохранить</button>
                 </div>
             </div>
         </div>

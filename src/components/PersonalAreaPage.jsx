@@ -6,6 +6,7 @@ import star from "../images/star.svg";
 const PersonalAreaPage = () => {
     const [is, setIs] = React.useState(true);
     const user = JSON.parse(localStorage.getItem("user"));
+    console.log(user)
 
     const [passwordState, setPasswordState] = React.useState(
         <div className="personal-area-page-password-block">
@@ -63,11 +64,10 @@ const PersonalAreaPage = () => {
             <div className="personal-area-page-user-data">
                 <p className="personal-area-page-name">{user.name}</p>
                 <p className="personal-area-page-surname">{user.surname}</p>
-                <img src={user.avatarFile ? user.avatarFile : defAva} alt="" className="personal-area-page-avatar"/>
+                <img src={user.avatarURL ? user.avatarURL : defAva} alt="" className="personal-area-page-avatar"/>
             </div>
             <div className="personal-area-page-personal-data">
                 <h3 className="personal-area-page-personal-data-head">Личные данные</h3>
-                <p className="personal-area-page-phone">{user.phone}</p>
                 <p className="personal-area-page-email">{user.email}</p>
                 <button className="personal-area-page-change-data"
                         onClick={() => setUserDataState(changeUserDataBlock)}>Изменить
@@ -84,7 +84,7 @@ const PersonalAreaPage = () => {
                 <input type="text" className="personal-area-page-user-data-input"
                        placeholder="введите фамилию"/>
                 <label htmlFor="avatar-input" className="personal-area-page-avatar-input-label">
-                    <img src={user.avatarFile ? user.avatarFile : defAva} alt="" className="personal-area-page-avatar"/>
+                    <img src={user.avatarURL ? user.avatarURL : defAva} alt="" className="personal-area-page-avatar"/>
                 </label>
                 <input type="file" className="personal-area-page-avatar-input" id="avatar-input"
                        accept="image/png, image/jpeg"/>
@@ -101,7 +101,7 @@ const PersonalAreaPage = () => {
                                 <div className="personal-area-page-user-data">
                                     <p className="personal-area-page-name">{user.name}</p>
                                     <p className="personal-area-page-surname">{user.surname}</p>
-                                    <img src={user.avatarFile ? user.avatarFile : defAva} alt=""
+                                    <img src={user.avatarURL ? user.avatarURL : defAva} alt=""
                                          className="personal-area-page-avatar"/>
                                 </div>
                                 <div className="personal-area-page-personal-data">

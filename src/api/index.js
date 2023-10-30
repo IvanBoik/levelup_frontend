@@ -1,54 +1,25 @@
-﻿// import axios from "axios";
-//
-// export const API_URL = "http://localhost:8080/api";
-//
-// const api = axios.create();
-//
-// const getNewAccessToken = async (refreshToken) => {
-//     const newAccessToken = await api.post("http://localhost:8080/api/users/auth/new_access", {refreshToken});
-//     localStorage.setItem("accessToken", newAccessToken.data.accessToken);
-//     return newAccessToken.data.accessToken;
-// }
-//
-// const getNewAccessTokenAfterRefresh = async (refreshToken) => {
-//     const refreshResponse = await api.post("http://localhost:8080/api/users/auth/new_refresh", {refreshToken});
-//     localStorage.setItem("accessToken", refreshResponse.data.accessToken);
-//     localStorage.setItem("refreshToken", refreshResponse.data.refreshToken);
-//     return refreshResponse.data.accessToken;
-// }
-//
-// export default axios.interceptors.request.use(async config => {
-//     const accessToken = localStorage.getItem("accessToken");
-//     const refreshToken = localStorage.getItem("refreshToken");
-//
-//     if (config.url.includes("auth")) {
-//         return config;
-//     }
-//
-//     if (accessToken === 'null' || refreshToken === 'null') {
-//         return config;
-//     }
-//
-//     if (accessToken === 'undefined' || refreshToken === 'undefined') {
-//         return config;
-//     }
-//
-//     try {
-//         config.headers.Authorization = `Bearer ${accessToken}`;
-//         await api.get("http://localhost:8080/api/users/test", config);
-//         return config;
-//     }
-//     catch (e) {
-//         try {
-//             const newAccessToken = await getNewAccessToken(refreshToken);
-//             config.headers.Authorization = `Bearer ${newAccessToken}`;
-//             await api.get("http://localhost:8080/api/users/test", config);
-//             return config;
-//         }
-//         catch (e) {
-//             const newAccessToken = await getNewAccessTokenAfterRefresh(refreshToken);
-//             config.headers.Authorization = `Bearer ${newAccessToken}`;
-//             return config;
-//         }
-//     }
-// });
+﻿import axios from "axios";
+
+const api = axios.create({
+    baseURL: "http://localhost:8081/api"
+});
+
+api.interceptors.request.use( config => {
+    config.headers.Authorization = `Bearer ${localStorage.getItem("accessToken")}`;
+    return config;
+});
+
+api.interceptors.response.use(
+    config => {
+        return config;
+    },
+    async error => {
+        if (error.response.status === 401) {
+            const response = await api.post("/users/auth/new_access_token", localStorage.getItem("refreshToken"));
+            localStorage.setItem("accessToken", response.data);
+            return api.request(error.config);
+        }
+    }
+);
+
+export default api;

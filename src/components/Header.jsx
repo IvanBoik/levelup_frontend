@@ -2,7 +2,7 @@ import React from 'react';
 import {NavLink} from "react-router-dom";
 
 const Header = () => {
-    let isUser = localStorage.getItem("accessToken") !== null;
+    let isUser = localStorage.getItem("user") !== null;
 
     return (
         <div className="main-header">
@@ -10,8 +10,6 @@ const Header = () => {
             <div className="links">
                 <NavLink to="/" className={({isActive}) =>
                     isActive?"header-href header-href-active":"header-href"}>Главная</NavLink>
-                <NavLink to="/articles" className={({isActive}) =>
-                    isActive?"header-href header-href-active":"header-href"}>Статьи</NavLink>
                 <NavLink to="/courses" className={({isActive}) =>
                     isActive?"header-href header-href-active":"header-href"}>Курсы</NavLink>
                 <NavLink to={isUser ? "/profile" : "/login"} className={({isActive}) =>

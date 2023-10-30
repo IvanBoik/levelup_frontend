@@ -1,28 +1,49 @@
 ﻿import React from 'react';
 import PersonalAreaHeader from "./PersonalAreaHeader";
-import testIMG from "../images/hw-test-button.svg";
-import freeAnswerIMG from "../images/hw-free-answer-button.svg";
-import {NavLink} from "react-router-dom";
 import LessonBuilderBlock from "./LessonBuilderBlock";
+import {CourseContext} from "../context";
+import {NavLink} from "react-router-dom";
 
 const AddNewLessonPage = () => {
 
-    const startValue = localStorage.getItem("lessonsCount");
-    const [lessonBuilders, setLessonBuilders] = React.useState([0]);
+    const {ctxCourse,
+        setCtxCourse,
+        ctxLesson,
+        setCtxLesson} = React.useContext(CourseContext);
+
+    localStorage.setItem("isEdit", "false");
 
     return (
         <div className="add-new-lesson-page">
             <PersonalAreaHeader/>
             <div className="add-new-lesson-page-container">
                 <h2 className="add-new-lesson-page-head">Программа курса</h2>
-                {lessonBuilders.map((x, index) => {
-                    return <LessonBuilderBlock index={startValue + index + 1}/>;
-                })}
-                <button className="add-new-lesson-page-save-lesson"
-                onClick={() => setLessonBuilders([...lessonBuilders, 0])}>+ Новый урок</button>
+                <LessonBuilderBlock/>
                 <div className="course-program-page-footer-with-scroll">
-                    <button className="course-program-page-footer-button">Сохранить</button>
-                    <button className="course-program-page-footer-button">Просмотр</button>
+                    <button className="course-program-page-footer-button" onClick={() => {
+                        console.log(ctxLesson);
+                        setCtxLesson({
+                            title: "",
+                            file: "",
+                            duration: "",
+                            introduction: "",
+                            description: "",
+                            homework: {
+                                homeworkType: "",
+                                freeAnswer: "",
+                                questions: [{
+                                    text: "",
+                                    type: "radio",
+                                    answers: [{
+                                        text: "",
+                                        isRight: true
+                                    }]
+                                }]
+                            }
+                        });
+                        localStorage.setItem("lessonsCount", Number(localStorage.getItem("lessonsCount")) + 1);
+                    }}>Сохранить</button>
+                    <NavLink to="/profile/create_course/content" className="course-program-page-footer-button">Просмотр</NavLink>
                 </div>
             </div>
         </div>
